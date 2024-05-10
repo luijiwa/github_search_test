@@ -6,9 +6,9 @@ part 'users.g.dart';
 @freezed
 class Users with _$Users {
   const factory Users({
-    int totalCount,
-    bool incompleteResults,
-    List<Items> items,
+    @Default(0) int totalCount,
+    @Default(false) bool incompleteResults,
+    @Default(<Items>[]) List<Items> items,
   }) = _Users;
 
   factory Users.fromJson(Map<String, Object?> json) => _$UsersFromJson(json);

@@ -20,9 +20,9 @@ Users _$UsersFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Users {
-  int? get totalCount => throw _privateConstructorUsedError;
-  bool? get incompleteResults => throw _privateConstructorUsedError;
-  List<Items>? get items => throw _privateConstructorUsedError;
+  int get totalCount => throw _privateConstructorUsedError;
+  bool get incompleteResults => throw _privateConstructorUsedError;
+  List<Items> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $UsersCopyWith<$Res> {
   factory $UsersCopyWith(Users value, $Res Function(Users) then) =
       _$UsersCopyWithImpl<$Res, Users>;
   @useResult
-  $Res call({int? totalCount, bool? incompleteResults, List<Items>? items});
+  $Res call({int totalCount, bool incompleteResults, List<Items> items});
 }
 
 /// @nodoc
@@ -50,23 +50,23 @@ class _$UsersCopyWithImpl<$Res, $Val extends Users>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalCount = freezed,
-    Object? incompleteResults = freezed,
-    Object? items = freezed,
+    Object? totalCount = null,
+    Object? incompleteResults = null,
+    Object? items = null,
   }) {
     return _then(_value.copyWith(
-      totalCount: freezed == totalCount
+      totalCount: null == totalCount
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      incompleteResults: freezed == incompleteResults
+              as int,
+      incompleteResults: null == incompleteResults
           ? _value.incompleteResults
           : incompleteResults // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      items: freezed == items
+              as bool,
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Items>?,
+              as List<Items>,
     ) as $Val);
   }
 }
@@ -78,7 +78,7 @@ abstract class _$$UsersImplCopyWith<$Res> implements $UsersCopyWith<$Res> {
       __$$UsersImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? totalCount, bool? incompleteResults, List<Items>? items});
+  $Res call({int totalCount, bool incompleteResults, List<Items> items});
 }
 
 /// @nodoc
@@ -92,23 +92,23 @@ class __$$UsersImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalCount = freezed,
-    Object? incompleteResults = freezed,
-    Object? items = freezed,
+    Object? totalCount = null,
+    Object? incompleteResults = null,
+    Object? items = null,
   }) {
     return _then(_$UsersImpl(
-      totalCount: freezed == totalCount
+      totalCount: null == totalCount
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      incompleteResults: freezed == incompleteResults
+              as int,
+      incompleteResults: null == incompleteResults
           ? _value.incompleteResults
           : incompleteResults // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      items: freezed == items
+              as bool,
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Items>?,
+              as List<Items>,
     ));
   }
 }
@@ -117,24 +117,27 @@ class __$$UsersImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UsersImpl with DiagnosticableTreeMixin implements _Users {
   const _$UsersImpl(
-      {this.totalCount, this.incompleteResults, final List<Items>? items})
+      {this.totalCount = 0,
+      this.incompleteResults = false,
+      final List<Items> items = const <Items>[]})
       : _items = items;
 
   factory _$UsersImpl.fromJson(Map<String, dynamic> json) =>
       _$$UsersImplFromJson(json);
 
   @override
-  final int? totalCount;
+  @JsonKey()
+  final int totalCount;
   @override
-  final bool? incompleteResults;
-  final List<Items>? _items;
+  @JsonKey()
+  final bool incompleteResults;
+  final List<Items> _items;
   @override
-  List<Items>? get items {
-    final value = _items;
-    if (value == null) return null;
+  @JsonKey()
+  List<Items> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
@@ -185,18 +188,18 @@ class _$UsersImpl with DiagnosticableTreeMixin implements _Users {
 
 abstract class _Users implements Users {
   const factory _Users(
-      {final int? totalCount,
-      final bool? incompleteResults,
-      final List<Items>? items}) = _$UsersImpl;
+      {final int totalCount,
+      final bool incompleteResults,
+      final List<Items> items}) = _$UsersImpl;
 
   factory _Users.fromJson(Map<String, dynamic> json) = _$UsersImpl.fromJson;
 
   @override
-  int? get totalCount;
+  int get totalCount;
   @override
-  bool? get incompleteResults;
+  bool get incompleteResults;
   @override
-  List<Items>? get items;
+  List<Items> get items;
   @override
   @JsonKey(ignore: true)
   _$$UsersImplCopyWith<_$UsersImpl> get copyWith =>
