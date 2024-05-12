@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_search_test/src/core/components/rest_service.dart';
 import 'package:github_search_test/src/features/search/search_screen.dart';
 
 class App extends StatelessWidget {
@@ -11,7 +13,10 @@ class App extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
       ),
-      home: const SearchScreen(),
+      home: RepositoryProvider(
+        create: (context) => RestService(),
+        child: const SearchScreen(),
+      ),
     );
   }
 }
