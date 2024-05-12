@@ -1,4 +1,10 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_search_test/src/core/components/rest_service.dart';
+import 'package:github_search_test/src/features/search/bloc/search_bloc.dart';
+import 'package:github_search_test/src/features/search/ui/search_view.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({
@@ -7,53 +13,14 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final height = size.height;
-    final width = size.width;
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: Scaffold(
-          body: CustomScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        slivers: [
-          const SliverAppBar(
-            title: Text('GitHub юзерs'),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: TextField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(40))),
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 16,
-                  ),
-                  label: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.search),
-                      Text('Поиск'),
-                    ],
-                  ),
-                ),
-                onSubmitted: (value) {
-                  //TODO: implement search logic
-                },
-              ),
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate([]),
-          ),
-          SliverToBoxAdapter(
-            child: Container(
-              height: width * 2,
-            ),
-          )
-        ],
-      )),
+      child: BlocProvider(
+        create: (context) => SearchBloc(
+          restService: RepositoryProvider.of<RestService>(context),
+        ),
+        child: const SearchView(),
+      ),
     );
   }
 }

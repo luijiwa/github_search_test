@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:github_search_test/src/core/models/screen_status.dart';
 part 'users.freezed.dart';
 part 'users.g.dart';
 
@@ -17,14 +18,16 @@ class Users with _$Users {
 @freezed
 class Items with _$Items {
   const factory Items({
-    String? login,
-    int? id,
+    @Default('') String login,
+    @Default(0) int id,
     String? nodeId,
-    String? avatarUrl,
+    @Default('') String avatarUrl,
     String? gravatarId,
     String? url,
     String? htmlUrl,
-    String? followersUrl,
+    @Default('') String followersUrl,
+    @Default(ScreenStatus.initial) ScreenStatus followersCountStatus,
+    int? followersCount,
     String? followingUrl,
     String? gistsUrl,
     String? starredUrl,

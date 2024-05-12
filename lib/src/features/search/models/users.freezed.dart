@@ -212,14 +212,16 @@ Items _$ItemsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Items {
-  String? get login => throw _privateConstructorUsedError;
-  int? get id => throw _privateConstructorUsedError;
+  String get login => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String? get nodeId => throw _privateConstructorUsedError;
-  String? get avatarUrl => throw _privateConstructorUsedError;
+  String get avatarUrl => throw _privateConstructorUsedError;
   String? get gravatarId => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   String? get htmlUrl => throw _privateConstructorUsedError;
-  String? get followersUrl => throw _privateConstructorUsedError;
+  String get followersUrl => throw _privateConstructorUsedError;
+  ScreenStatus get followersCountStatus => throw _privateConstructorUsedError;
+  int? get followersCount => throw _privateConstructorUsedError;
   String? get followingUrl => throw _privateConstructorUsedError;
   String? get gistsUrl => throw _privateConstructorUsedError;
   String? get starredUrl => throw _privateConstructorUsedError;
@@ -243,14 +245,16 @@ abstract class $ItemsCopyWith<$Res> {
       _$ItemsCopyWithImpl<$Res, Items>;
   @useResult
   $Res call(
-      {String? login,
-      int? id,
+      {String login,
+      int id,
       String? nodeId,
-      String? avatarUrl,
+      String avatarUrl,
       String? gravatarId,
       String? url,
       String? htmlUrl,
-      String? followersUrl,
+      String followersUrl,
+      ScreenStatus followersCountStatus,
+      int? followersCount,
       String? followingUrl,
       String? gistsUrl,
       String? starredUrl,
@@ -277,14 +281,16 @@ class _$ItemsCopyWithImpl<$Res, $Val extends Items>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? login = freezed,
-    Object? id = freezed,
+    Object? login = null,
+    Object? id = null,
     Object? nodeId = freezed,
-    Object? avatarUrl = freezed,
+    Object? avatarUrl = null,
     Object? gravatarId = freezed,
     Object? url = freezed,
     Object? htmlUrl = freezed,
-    Object? followersUrl = freezed,
+    Object? followersUrl = null,
+    Object? followersCountStatus = null,
+    Object? followersCount = freezed,
     Object? followingUrl = freezed,
     Object? gistsUrl = freezed,
     Object? starredUrl = freezed,
@@ -298,22 +304,22 @@ class _$ItemsCopyWithImpl<$Res, $Val extends Items>
     Object? score = freezed,
   }) {
     return _then(_value.copyWith(
-      login: freezed == login
+      login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: freezed == avatarUrl
+      avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gravatarId: freezed == gravatarId
           ? _value.gravatarId
           : gravatarId // ignore: cast_nullable_to_non_nullable
@@ -326,10 +332,18 @@ class _$ItemsCopyWithImpl<$Res, $Val extends Items>
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      followersUrl: freezed == followersUrl
+      followersUrl: null == followersUrl
           ? _value.followersUrl
           : followersUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      followersCountStatus: null == followersCountStatus
+          ? _value.followersCountStatus
+          : followersCountStatus // ignore: cast_nullable_to_non_nullable
+              as ScreenStatus,
+      followersCount: freezed == followersCount
+          ? _value.followersCount
+          : followersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
       followingUrl: freezed == followingUrl
           ? _value.followingUrl
           : followingUrl // ignore: cast_nullable_to_non_nullable
@@ -386,14 +400,16 @@ abstract class _$$ItemsImplCopyWith<$Res> implements $ItemsCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? login,
-      int? id,
+      {String login,
+      int id,
       String? nodeId,
-      String? avatarUrl,
+      String avatarUrl,
       String? gravatarId,
       String? url,
       String? htmlUrl,
-      String? followersUrl,
+      String followersUrl,
+      ScreenStatus followersCountStatus,
+      int? followersCount,
       String? followingUrl,
       String? gistsUrl,
       String? starredUrl,
@@ -418,14 +434,16 @@ class __$$ItemsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? login = freezed,
-    Object? id = freezed,
+    Object? login = null,
+    Object? id = null,
     Object? nodeId = freezed,
-    Object? avatarUrl = freezed,
+    Object? avatarUrl = null,
     Object? gravatarId = freezed,
     Object? url = freezed,
     Object? htmlUrl = freezed,
-    Object? followersUrl = freezed,
+    Object? followersUrl = null,
+    Object? followersCountStatus = null,
+    Object? followersCount = freezed,
     Object? followingUrl = freezed,
     Object? gistsUrl = freezed,
     Object? starredUrl = freezed,
@@ -439,22 +457,22 @@ class __$$ItemsImplCopyWithImpl<$Res>
     Object? score = freezed,
   }) {
     return _then(_$ItemsImpl(
-      login: freezed == login
+      login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       nodeId: freezed == nodeId
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: freezed == avatarUrl
+      avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gravatarId: freezed == gravatarId
           ? _value.gravatarId
           : gravatarId // ignore: cast_nullable_to_non_nullable
@@ -467,10 +485,18 @@ class __$$ItemsImplCopyWithImpl<$Res>
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      followersUrl: freezed == followersUrl
+      followersUrl: null == followersUrl
           ? _value.followersUrl
           : followersUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      followersCountStatus: null == followersCountStatus
+          ? _value.followersCountStatus
+          : followersCountStatus // ignore: cast_nullable_to_non_nullable
+              as ScreenStatus,
+      followersCount: freezed == followersCount
+          ? _value.followersCount
+          : followersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
       followingUrl: freezed == followingUrl
           ? _value.followingUrl
           : followingUrl // ignore: cast_nullable_to_non_nullable
@@ -523,14 +549,16 @@ class __$$ItemsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
   const _$ItemsImpl(
-      {this.login,
-      this.id,
+      {this.login = '',
+      this.id = 0,
       this.nodeId,
-      this.avatarUrl,
+      this.avatarUrl = '',
       this.gravatarId,
       this.url,
       this.htmlUrl,
-      this.followersUrl,
+      this.followersUrl = '',
+      this.followersCountStatus = ScreenStatus.initial,
+      this.followersCount,
       this.followingUrl,
       this.gistsUrl,
       this.starredUrl,
@@ -547,13 +575,16 @@ class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
       _$$ItemsImplFromJson(json);
 
   @override
-  final String? login;
+  @JsonKey()
+  final String login;
   @override
-  final int? id;
+  @JsonKey()
+  final int id;
   @override
   final String? nodeId;
   @override
-  final String? avatarUrl;
+  @JsonKey()
+  final String avatarUrl;
   @override
   final String? gravatarId;
   @override
@@ -561,7 +592,13 @@ class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
   @override
   final String? htmlUrl;
   @override
-  final String? followersUrl;
+  @JsonKey()
+  final String followersUrl;
+  @override
+  @JsonKey()
+  final ScreenStatus followersCountStatus;
+  @override
+  final int? followersCount;
   @override
   final String? followingUrl;
   @override
@@ -587,7 +624,7 @@ class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Items(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, score: $score)';
+    return 'Items(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followersCountStatus: $followersCountStatus, followersCount: $followersCount, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, score: $score)';
   }
 
   @override
@@ -603,6 +640,8 @@ class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
       ..add(DiagnosticsProperty('url', url))
       ..add(DiagnosticsProperty('htmlUrl', htmlUrl))
       ..add(DiagnosticsProperty('followersUrl', followersUrl))
+      ..add(DiagnosticsProperty('followersCountStatus', followersCountStatus))
+      ..add(DiagnosticsProperty('followersCount', followersCount))
       ..add(DiagnosticsProperty('followingUrl', followingUrl))
       ..add(DiagnosticsProperty('gistsUrl', gistsUrl))
       ..add(DiagnosticsProperty('starredUrl', starredUrl))
@@ -632,6 +671,10 @@ class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
             (identical(other.htmlUrl, htmlUrl) || other.htmlUrl == htmlUrl) &&
             (identical(other.followersUrl, followersUrl) ||
                 other.followersUrl == followersUrl) &&
+            (identical(other.followersCountStatus, followersCountStatus) ||
+                other.followersCountStatus == followersCountStatus) &&
+            (identical(other.followersCount, followersCount) ||
+                other.followersCount == followersCount) &&
             (identical(other.followingUrl, followingUrl) ||
                 other.followingUrl == followingUrl) &&
             (identical(other.gistsUrl, gistsUrl) ||
@@ -666,6 +709,8 @@ class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
         url,
         htmlUrl,
         followersUrl,
+        followersCountStatus,
+        followersCount,
         followingUrl,
         gistsUrl,
         starredUrl,
@@ -695,14 +740,16 @@ class _$ItemsImpl with DiagnosticableTreeMixin implements _Items {
 
 abstract class _Items implements Items {
   const factory _Items(
-      {final String? login,
-      final int? id,
+      {final String login,
+      final int id,
       final String? nodeId,
-      final String? avatarUrl,
+      final String avatarUrl,
       final String? gravatarId,
       final String? url,
       final String? htmlUrl,
-      final String? followersUrl,
+      final String followersUrl,
+      final ScreenStatus followersCountStatus,
+      final int? followersCount,
       final String? followingUrl,
       final String? gistsUrl,
       final String? starredUrl,
@@ -718,13 +765,13 @@ abstract class _Items implements Items {
   factory _Items.fromJson(Map<String, dynamic> json) = _$ItemsImpl.fromJson;
 
   @override
-  String? get login;
+  String get login;
   @override
-  int? get id;
+  int get id;
   @override
   String? get nodeId;
   @override
-  String? get avatarUrl;
+  String get avatarUrl;
   @override
   String? get gravatarId;
   @override
@@ -732,7 +779,11 @@ abstract class _Items implements Items {
   @override
   String? get htmlUrl;
   @override
-  String? get followersUrl;
+  String get followersUrl;
+  @override
+  ScreenStatus get followersCountStatus;
+  @override
+  int? get followersCount;
   @override
   String? get followingUrl;
   @override

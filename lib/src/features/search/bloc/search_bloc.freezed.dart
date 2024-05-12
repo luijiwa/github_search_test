@@ -18,17 +18,20 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SearchEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_OnTyped value) onTyped,
+    required TResult Function(_OnFollowersCountGet value) onFollowersCountGet,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_OnTyped value)? onTyped,
+    TResult? Function(_OnFollowersCountGet value)? onFollowersCountGet,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_OnTyped value)? onTyped,
+    TResult Function(_OnFollowersCountGet value)? onFollowersCountGet,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,77 +56,217 @@ class _$SearchEventCopyWithImpl<$Res, $Val extends SearchEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$OnTypedImplCopyWith<$Res> {
+  factory _$$OnTypedImplCopyWith(
+          _$OnTypedImpl value, $Res Function(_$OnTypedImpl) then) =
+      __$$OnTypedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String query});
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$OnTypedImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$OnTypedImpl>
+    implements _$$OnTypedImplCopyWith<$Res> {
+  __$$OnTypedImplCopyWithImpl(
+      _$OnTypedImpl _value, $Res Function(_$OnTypedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? query = null,
+  }) {
+    return _then(_$OnTypedImpl(
+      null == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+class _$OnTypedImpl implements _OnTyped {
+  const _$OnTypedImpl(this.query);
+
+  @override
+  final String query;
 
   @override
   String toString() {
-    return 'SearchEvent.started()';
+    return 'SearchEvent.onTyped(query: $query)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$OnTypedImpl &&
+            (identical(other.query, query) || other.query == query));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, query);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnTypedImplCopyWith<_$OnTypedImpl> get copyWith =>
+      __$$OnTypedImplCopyWithImpl<_$OnTypedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_OnTyped value) onTyped,
+    required TResult Function(_OnFollowersCountGet value) onFollowersCountGet,
   }) {
-    return started(this);
+    return onTyped(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_OnTyped value)? onTyped,
+    TResult? Function(_OnFollowersCountGet value)? onFollowersCountGet,
   }) {
-    return started?.call(this);
+    return onTyped?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_OnTyped value)? onTyped,
+    TResult Function(_OnFollowersCountGet value)? onFollowersCountGet,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (onTyped != null) {
+      return onTyped(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements SearchEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class _OnTyped implements SearchEvent {
+  const factory _OnTyped(final String query) = _$OnTypedImpl;
+
+  String get query;
+  @JsonKey(ignore: true)
+  _$$OnTypedImplCopyWith<_$OnTypedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnFollowersCountGetImplCopyWith<$Res> {
+  factory _$$OnFollowersCountGetImplCopyWith(_$OnFollowersCountGetImpl value,
+          $Res Function(_$OnFollowersCountGetImpl) then) =
+      __$$OnFollowersCountGetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$OnFollowersCountGetImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$OnFollowersCountGetImpl>
+    implements _$$OnFollowersCountGetImplCopyWith<$Res> {
+  __$$OnFollowersCountGetImplCopyWithImpl(_$OnFollowersCountGetImpl _value,
+      $Res Function(_$OnFollowersCountGetImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$OnFollowersCountGetImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnFollowersCountGetImpl implements _OnFollowersCountGet {
+  const _$OnFollowersCountGetImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'SearchEvent.onFollowersCountGet(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnFollowersCountGetImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnFollowersCountGetImplCopyWith<_$OnFollowersCountGetImpl> get copyWith =>
+      __$$OnFollowersCountGetImplCopyWithImpl<_$OnFollowersCountGetImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnTyped value) onTyped,
+    required TResult Function(_OnFollowersCountGet value) onFollowersCountGet,
+  }) {
+    return onFollowersCountGet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnTyped value)? onTyped,
+    TResult? Function(_OnFollowersCountGet value)? onFollowersCountGet,
+  }) {
+    return onFollowersCountGet?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnTyped value)? onTyped,
+    TResult Function(_OnFollowersCountGet value)? onFollowersCountGet,
+    required TResult orElse(),
+  }) {
+    if (onFollowersCountGet != null) {
+      return onFollowersCountGet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnFollowersCountGet implements SearchEvent {
+  const factory _OnFollowersCountGet(final int index) =
+      _$OnFollowersCountGetImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$OnFollowersCountGetImplCopyWith<_$OnFollowersCountGetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$SearchState {
   ScreenStatus get status => throw _privateConstructorUsedError;
-  List<dynamic> get searchElements => throw _privateConstructorUsedError;
+  List<Items> get items => throw _privateConstructorUsedError;
+  List<int> get followersCount => throw _privateConstructorUsedError;
+  String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SearchStateCopyWith<SearchState> get copyWith =>
@@ -136,7 +279,11 @@ abstract class $SearchStateCopyWith<$Res> {
           SearchState value, $Res Function(SearchState) then) =
       _$SearchStateCopyWithImpl<$Res, SearchState>;
   @useResult
-  $Res call({ScreenStatus status, List<dynamic> searchElements});
+  $Res call(
+      {ScreenStatus status,
+      List<Items> items,
+      List<int> followersCount,
+      String errorMessage});
 }
 
 /// @nodoc
@@ -153,17 +300,27 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
   @override
   $Res call({
     Object? status = null,
-    Object? searchElements = null,
+    Object? items = null,
+    Object? followersCount = null,
+    Object? errorMessage = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ScreenStatus,
-      searchElements: null == searchElements
-          ? _value.searchElements
-          : searchElements // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Items>,
+      followersCount: null == followersCount
+          ? _value.followersCount
+          : followersCount // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -176,7 +333,11 @@ abstract class _$$SearchStateImplCopyWith<$Res>
       __$$SearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ScreenStatus status, List<dynamic> searchElements});
+  $Res call(
+      {ScreenStatus status,
+      List<Items> items,
+      List<int> followersCount,
+      String errorMessage});
 }
 
 /// @nodoc
@@ -191,17 +352,27 @@ class __$$SearchStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? searchElements = null,
+    Object? items = null,
+    Object? followersCount = null,
+    Object? errorMessage = null,
   }) {
     return _then(_$SearchStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ScreenStatus,
-      searchElements: null == searchElements
-          ? _value._searchElements
-          : searchElements // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<Items>,
+      followersCount: null == followersCount
+          ? _value._followersCount
+          : followersCount // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -211,24 +382,40 @@ class __$$SearchStateImplCopyWithImpl<$Res>
 class _$SearchStateImpl implements _SearchState {
   const _$SearchStateImpl(
       {this.status = ScreenStatus.initial,
-      final List<dynamic> searchElements = const []})
-      : _searchElements = searchElements;
+      final List<Items> items = const <Items>[],
+      final List<int> followersCount = const [],
+      this.errorMessage = ''})
+      : _items = items,
+        _followersCount = followersCount;
 
   @override
   @JsonKey()
   final ScreenStatus status;
-  final List<dynamic> _searchElements;
+  final List<Items> _items;
   @override
   @JsonKey()
-  List<dynamic> get searchElements {
-    if (_searchElements is EqualUnmodifiableListView) return _searchElements;
+  List<Items> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_searchElements);
+    return EqualUnmodifiableListView(_items);
+  }
+
+  final List<int> _followersCount;
+  @override
+  @JsonKey()
+  List<int> get followersCount {
+    if (_followersCount is EqualUnmodifiableListView) return _followersCount;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_followersCount);
   }
 
   @override
+  @JsonKey()
+  final String errorMessage;
+
+  @override
   String toString() {
-    return 'SearchState(status: $status, searchElements: $searchElements)';
+    return 'SearchState(status: $status, items: $items, followersCount: $followersCount, errorMessage: $errorMessage)';
   }
 
   @override
@@ -237,13 +424,20 @@ class _$SearchStateImpl implements _SearchState {
         (other.runtimeType == runtimeType &&
             other is _$SearchStateImpl &&
             (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
             const DeepCollectionEquality()
-                .equals(other._searchElements, _searchElements));
+                .equals(other._followersCount, _followersCount) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status,
-      const DeepCollectionEquality().hash(_searchElements));
+  int get hashCode => Object.hash(
+      runtimeType,
+      status,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(_followersCount),
+      errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -255,12 +449,18 @@ class _$SearchStateImpl implements _SearchState {
 abstract class _SearchState implements SearchState {
   const factory _SearchState(
       {final ScreenStatus status,
-      final List<dynamic> searchElements}) = _$SearchStateImpl;
+      final List<Items> items,
+      final List<int> followersCount,
+      final String errorMessage}) = _$SearchStateImpl;
 
   @override
   ScreenStatus get status;
   @override
-  List<dynamic> get searchElements;
+  List<Items> get items;
+  @override
+  List<int> get followersCount;
+  @override
+  String get errorMessage;
   @override
   @JsonKey(ignore: true)
   _$$SearchStateImplCopyWith<_$SearchStateImpl> get copyWith =>

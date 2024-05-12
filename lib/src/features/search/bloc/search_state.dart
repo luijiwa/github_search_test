@@ -4,6 +4,8 @@ part of 'search_bloc.dart';
 class SearchState with _$SearchState {
   const factory SearchState({
     @Default(ScreenStatus.initial) ScreenStatus status,
-    @Default([]) List searchElements,
+    @Default(<Items>[]) List<Items> items,
+    @Default([]) List<int> followersCount,
+    @Default('') String errorMessage,
   }) = _SearchState;
 }

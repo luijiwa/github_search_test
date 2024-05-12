@@ -23,14 +23,18 @@ Map<String, dynamic> _$$UsersImplToJson(_$UsersImpl instance) =>
     };
 
 _$ItemsImpl _$$ItemsImplFromJson(Map<String, dynamic> json) => _$ItemsImpl(
-      login: json['login'] as String?,
-      id: (json['id'] as num?)?.toInt(),
+      login: json['login'] as String? ?? '',
+      id: (json['id'] as num?)?.toInt() ?? 0,
       nodeId: json['node_id'] as String?,
-      avatarUrl: json['avatar_url'] as String?,
+      avatarUrl: json['avatar_url'] as String? ?? '',
       gravatarId: json['gravatar_id'] as String?,
       url: json['url'] as String?,
       htmlUrl: json['html_url'] as String?,
-      followersUrl: json['followers_url'] as String?,
+      followersUrl: json['followers_url'] as String? ?? '',
+      followersCountStatus: $enumDecodeNullable(
+              _$ScreenStatusEnumMap, json['followers_count_status']) ??
+          ScreenStatus.initial,
+      followersCount: (json['followers_count'] as num?)?.toInt(),
       followingUrl: json['following_url'] as String?,
       gistsUrl: json['gists_url'] as String?,
       starredUrl: json['starred_url'] as String?,
@@ -54,6 +58,9 @@ Map<String, dynamic> _$$ItemsImplToJson(_$ItemsImpl instance) =>
       'url': instance.url,
       'html_url': instance.htmlUrl,
       'followers_url': instance.followersUrl,
+      'followers_count_status':
+          _$ScreenStatusEnumMap[instance.followersCountStatus]!,
+      'followers_count': instance.followersCount,
       'following_url': instance.followingUrl,
       'gists_url': instance.gistsUrl,
       'starred_url': instance.starredUrl,
@@ -66,3 +73,11 @@ Map<String, dynamic> _$$ItemsImplToJson(_$ItemsImpl instance) =>
       'site_admin': instance.siteAdmin,
       'score': instance.score,
     };
+
+const _$ScreenStatusEnumMap = {
+  ScreenStatus.initial: 'initial',
+  ScreenStatus.loading: 'loading',
+  ScreenStatus.success: 'success',
+  ScreenStatus.empty: 'empty',
+  ScreenStatus.failure: 'failure',
+};
