@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:github_search_test/src/core/components/rest_service.dart';
 import 'package:github_search_test/src/core/routing/app_router.dart';
-import 'package:github_search_test/src/features/search/search_screen.dart';
-import 'package:go_router/src/router.dart';
 
 class App extends StatefulWidget {
   const App({super.key});

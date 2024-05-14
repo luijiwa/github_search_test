@@ -6,7 +6,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:github_search_test/src/core/components/rest_service.dart';
 import 'package:github_search_test/src/core/models/screen_status.dart';
 import 'package:github_search_test/src/features/item_screen/models/repository_list.dart';
-import 'package:github_search_test/src/features/search/models/users.dart';
 
 part 'item_event.dart';
 part 'item_state.dart';

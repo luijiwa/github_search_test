@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart'
-    show BuildContext, GlobalKey, NavigatorState;
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/material.dart' show GlobalKey, NavigatorState;
 import 'package:github_search_test/src/core/routing/app_routes.dart';
 import 'package:github_search_test/src/features/item_screen/ui/item_screen.dart';
 import 'package:github_search_test/src/features/search/search_screen.dart';

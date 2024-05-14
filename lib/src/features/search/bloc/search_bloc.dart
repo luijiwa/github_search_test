@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -40,7 +39,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           items: [...state.items]..[i] = updatedItem,
         ));
       }
-    } catch (e, stackTrace) {
+    } catch (e) {
       emit(state.copyWith(status: ScreenStatus.failure));
     }
   }

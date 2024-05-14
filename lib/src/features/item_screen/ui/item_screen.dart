@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_search_test/src/core/components/rest_service.dart';
 import 'package:github_search_test/src/core/models/screen_status.dart';
 import 'package:github_search_test/src/features/item_screen/bloc/item_bloc.dart';
-import 'package:github_search_test/src/features/item_screen/models/repository_list.dart';
 import 'package:github_search_test/src/features/item_screen/ui/list_element_row_widget.dart';
 
 class ItemScreen extends StatelessWidget {
