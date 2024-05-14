@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:github_search_test/src/features/item_screen/models/repository_list.dart';
 import 'package:github_search_test/src/features/search/models/users.dart';
 
 final class RestService {
@@ -29,6 +30,20 @@ final class RestService {
       return followers.length;
     } catch (e) {
       log(e.toString());
+      rethrow;
+    }
+  }
+
+  Future<List<RepositoryList>> getListRepos(String repoUrl) async {
+    try {
+      final response = await _dio.get(repoUrl);
+      List<dynamic> responseData = response.data;
+      List<RepositoryList> repositoryList =
+          responseData.map((data) => RepositoryList.fromJson(data)).toList();
+
+      return repositoryList;
+    } catch (e, stackTrace) {
+      log(e.toString(), stackTrace: stackTrace);
       rethrow;
     }
   }
