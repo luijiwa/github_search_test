@@ -50,11 +50,6 @@ class ItemView extends StatelessWidget {
                   );
 
                 case ScreenStatus.success:
-                  if (items.isEmpty) {
-                    return const SliverFillRemaining(
-                      child: Text('Пусто'),
-                    );
-                  }
                   return SliverList.separated(
                     itemCount: items.length,
                     itemBuilder: (context, index) {
@@ -62,9 +57,13 @@ class ItemView extends StatelessWidget {
                     },
                     separatorBuilder: (_, __) => const Divider(),
                   );
+                case ScreenStatus.empty:
+                  return const SliverFillRemaining(
+                    child: Center(child: Text('Пусто')),
+                  );
                 default:
                   return const SliverFillRemaining(
-                    child: Text('Пусто или ошибка мне лень делать'),
+                    child: Text('Непредвиденная ошибка'),
                   );
               }
             }),
