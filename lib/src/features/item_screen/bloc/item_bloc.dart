@@ -25,10 +25,11 @@ class ItemBloc extends Bloc<ItemEvent, ItemState> {
     try {
       final repositoryList = await _restService.getListRepos(event.repoUrl);
       if (repositoryList.isEmpty) {
+        emit(state.copyWith(status: ScreenStatus.empty, items: []));
+      } else {
         emit(state.copyWith(
             status: ScreenStatus.success, items: repositoryList));
       }
-      emit(state.copyWith(status: ScreenStatus.empty, items: []));
     } catch (e) {
       log(e.toString());
       emit(state.copyWith(status: ScreenStatus.failure));
